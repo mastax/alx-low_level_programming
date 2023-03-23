@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <unistd.h>
 /**
  * main - It is Fizz-Buzz test
