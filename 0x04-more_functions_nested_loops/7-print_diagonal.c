@@ -1,29 +1,29 @@
 #include "main.h"
 /**
- * print_diagonal - function that draws a diagonal line on the terminal.
- * @n: is the number of times the character \ should be printed
+ * print_diagonal - draws a diagonal line on the terminal
+ * @n: Input
+ * Return: Always 0
  */
 void print_diagonal(int n)
 {
+	int times;
+	int show = 92;
+	int empty;
+
 	if (n <= 0)
 	{
 		_putchar('\n');
 	}
 	else
 	{
-		int i;
-		int j;
-
-		for (j = 0; i < n; i++)
+		for (times = 0; times < n; times++)
 		{
-			if (j == i)
-			{
-				_putchar('\\');
-			}
-			else if (j < i)
+			for (empty = 1; empty <= times; empty++)
 			{
 				_putchar(' ');
 			}
+			_putchar(show);
+			_putchar('\n');
 		}
 	}
 }
