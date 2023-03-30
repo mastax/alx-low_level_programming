@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * rot13 - change letters to ROT13.
  * @s: analized string.
@@ -20,7 +21,7 @@ char *rot13(char *s)
 			if (*(s + i) == a[j])
 			{
 				*(s + i) = rot[j];
-				break
+				break;
 			}
 			j++;
 		}
