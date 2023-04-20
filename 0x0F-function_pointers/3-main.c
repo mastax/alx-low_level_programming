@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"3-calc.h"
+#include <string.h>
 /**
  * main -n operates two numbers.
  * @argc: argument couter.
@@ -33,5 +34,5 @@ int main(int argc, char **argv)
 	b = atoi(argv[3]);
 	answer = function(a, b);
 	printf("%d\n", answer);
-	return(0);
+	return (0);
 }
