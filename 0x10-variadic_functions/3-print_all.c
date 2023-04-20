@@ -1,79 +1,49 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include <stdarg.h>
-#include "variadic_functions.h"
+#include <stdio.h>
 /**
- * print_int - prints an int
- * @args: the list of args
- */
-void print_int(va_list args)
-{
-	printf("%d", va_arg(args, int));
-}
-/**
- * print_char - prints a char
- * @args: the list of args
- */
-void print_char(va_list args)
-{
-	printf("%c", va_arg(args, int));
-}
-/**
- * print_string - prints a string
- * @args: the list of args
- */
-void print_string(va_list args)
-{
-	char *z = va_arg(args, char *);
-
-	if (!z)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", z);
-}
-/**
- * print_float - prints floats
- * @args: the list of args
- */
-void print_float(va_list args)
-{
-	printf("%f", va_arg(args, double));
-}
-/**
- * print_all - prints all
- * @format: formats of arg
+ * print_all - prints all the given strings.
+ * @format: the kind of format c for char s for string i for int f for
+ * float.
+ * Return: a string with tha arguments.
  */
 void print_all(const char * const format, ...)
 {
-	types_t types[] = {
-	{'c', print_char},
-	{'i', print_int},
-	{'f', print_float},
-	{'s', print_string},
-	{'\0', NULL}
-	};
-	va_list args;
-	char *sep1 = "", *sep2 = ", ";
-	int count1 = 0, count2 = 0;
+	unsigned int i = 0;
+	char *str;
+	va_list arguments;
 
-	va_start(args, format);
-	while (format !=  NULL && format[count1] != '\0')
+	va_start(arguments, format);
+	while (format && format[i] != '\0')
 	{
-		count2 = 0;
-		while (types[count2].z != '\0')
+		switch (format[i])
 		{
-			if (format[count1] == types[count2].z)
+		case 'c':
+			printf("%c", va_arg(arguments, int));
+			break;
+		case 'i':
+			printf("%i", va_arg(arguments, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(arguments, double));
+			break;
+		case 's':
+			str = va_arg(arguments, char *);
+			if (str)
 			{
-				printf("%s", sep1);
-				types[count2].f(args);
-				sep1 = sep2;
+				printf("%s", str);
+				break;
 			}
-			count2++;
+			printf("(nil)");
+			break;
+		default:
+			i++;
+			continue;
 		}
-		count1++;
+		if (format[i + 1] != '\0')
+			printf(", ");
+
+		i++;
 	}
+	va_end(arguments);
 	printf("\n");
-	va_end(args);
 }
