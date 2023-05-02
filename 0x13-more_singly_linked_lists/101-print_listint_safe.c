@@ -26,7 +26,7 @@ size_t print_listint_safe(const listint_t *head)
  * print_listint_twice - prints a list_int linked list twice.
  * @head: pointer to the head of the list.
  */
-void print_listint_twice(count listint_t *head)
+void print_listint_twice(const listint_t *head)
 {
 	size_t count;
 
