@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * flip_bits - calculates the number of bites that need to be 
+ * flip_bits - calculates the number of bites that need to be
  * flipped to turn one number into another.
  *
  * @n: the first input number.
@@ -18,7 +18,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	bit_diff = n ^ m;
 	/* Start with the most significant bit */
 	i = 63;
-	while(i >= 0)
+	while (i >= 0)
 	{
 		/* create a mask to extract the digit at the current bit position*/
 		mask = 1UL << i;
