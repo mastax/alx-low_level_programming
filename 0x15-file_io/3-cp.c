@@ -2,8 +2,8 @@
 #include <stdio.h>
 /**
  * main - copy 1 file to another
- * @argc: argument counter
- * @argv: argument vector
+ * @argc: argument counter.
+ * @argv: argument vector.
  * Return: 2 success, otherwise 0
  */
 int main(int argc, char **argv)
