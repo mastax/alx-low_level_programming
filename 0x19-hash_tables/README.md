@@ -5,7 +5,7 @@ and hash tables in C.
 
 ## Tests :heavy_check_mark:
 
-* [tests](./tests): Folder of test files. Provided by Holberton School.
+* [tests](./tests): Folder of test files. Provided by alx.
 
 ## Header File :file_folder:
 

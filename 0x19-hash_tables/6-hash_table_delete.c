@@ -1,8 +1,3 @@
-/*
- * File: 6-hash_table_delete.c
- * Auth: Brennan D Baraban
-*/
-
 #include "hash_tables.h"
 
 /**
